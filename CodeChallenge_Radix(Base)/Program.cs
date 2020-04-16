@@ -12,16 +12,31 @@ namespace CodeChallenge_Radix_Base_
         static void Main(string[] args)
         {
             int n = Convert.ToInt32(Console.ReadLine());
-            int reminder;
-            var numberList = new List<int>();
+            int reminder ;
+            int counter = 0;
+            int times = 0;
 
-            while (n>2)
+            while (n>0)
             {
                 reminder = n % 2;
                 n = n / 2;
-                numberList.Add(reminder);
+                if(reminder ==1)
+                {
+                     counter++;
+                    if(counter > times)
+                    {
+                        times = counter;
+                    }
+                }
 
+                else
+                {
+                    counter = 0;
+                }
             }
+
+            Console.WriteLine(times);
+            Console.ReadLine();
         }
     }
 }
